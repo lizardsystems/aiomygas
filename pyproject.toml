@@ -43,8 +43,8 @@ name = "LizardSystems"
 
 [tool.setuptools_scm]
 version_file = "aiomygas/_version.py"
-local_scheme = "no-local-version"
-version_scheme = "release-branch-semver"
+local_scheme = "release-branch-semver"
+version_scheme = "python-simplified-semver"
 
 [tool.setuptools]
 platforms = ["any"]
