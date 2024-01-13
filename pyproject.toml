@@ -44,7 +44,7 @@ name = "LizardSystems"
 [tool.setuptools_scm]
 version_file = "aiomygas/_version.py"
 local_scheme = "no-local-version"
-version_scheme = "post-release"
+version_scheme = "release-branch-semver"
 
 [tool.setuptools]
 platforms = ["any"]
