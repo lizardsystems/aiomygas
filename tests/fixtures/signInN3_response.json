@@ -1,0 +1,10 @@
+{
+  "data": {
+    "signInN3": {
+      "ok": true,
+      "error": null,
+      "token": "111a44c5412675980735f49ee5119b1b92873222",
+      "hasAgreement": true
+    }
+  }
+}

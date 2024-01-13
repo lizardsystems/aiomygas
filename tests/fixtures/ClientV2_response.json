@@ -1,0 +1,26 @@
+{
+  "data": {
+    "clientV2": {
+      "ok": true,
+      "error": null,
+      "client": {
+        "id": 11111111,
+        "identifier": "test@test.ru",
+        "email": "test@test.ru",
+        "phone": "+7 (999) 111-11-11",
+        "name": null,
+        "photo": null,
+        "token": "1111111111111111111111111111111111111111",
+        "hash": null,
+        "widgets": null,
+        "ssoProviders": [],
+        "eulaAccepted": true,
+        "passwordInfo": {
+          "updateDate": "2020-02-07T11:35:03.000Z",
+          "needUpdate": true,
+          "message": "Вы давно не меняли пароль, рекомендуется это делать не реже 1 раза в 6 месяцев"
+        }
+      }
+    }
+  }
+}

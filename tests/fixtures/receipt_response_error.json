@@ -1,0 +1,10 @@
+{
+  "data": {
+    "receipt": {
+      "ok": false,
+      "error": "За указанный период нет начислений",
+      "content": null,
+      "url": null
+    }
+  }
+}

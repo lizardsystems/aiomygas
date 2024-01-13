@@ -1,0 +1,10 @@
+{
+  "data": {
+    "signInN3": {
+      "ok": false,
+      "error": "Не верная пара логин/пароль",
+      "hasAgreement": false,
+      "token": null
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "mobile": {
+    "android": {
+      "device": [
+        "Samsung A10"
+      ],
+      "browser": [
+        "App"
+      ],
+      "screenResolution": [
+        "384x592"
+      ]
+    }
+  }
+}

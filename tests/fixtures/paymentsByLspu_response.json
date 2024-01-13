@@ -1,0 +1,68 @@
+{
+  "data": {
+    "paymentsByLspu": {
+      "ok": true,
+      "error": null,
+      "data": [
+        {
+          "paymentId": 4444444,
+          "amountKop": 333333,
+          "amountRub": 3333.33,
+          "lspu": "444444444444",
+          "source": "АБРоссия",
+          "date": "2023-11-25T00:00:00.000Z",
+          "fiscalized": true,
+          "sentToProvider": true,
+          "savedToProvider": true,
+          "serviceName": "Газоснабжение природным газом",
+          "kktId": "2222222222222222",
+          "detail": {
+            "sbp": true,
+            "email": "test@test.ru",
+            "status": "ИСПОЛНЕНА",
+            "documentUuid": null,
+            "serviceUuid": "ffffffff-4444-4444-9999-222222222222",
+            "providerName": "Межрегионгаз Ростов-на-Дону",
+            "providerInn": "6167049710",
+            "id": 44444444,
+            "session": "33333333333333333333333333333333",
+            "order": "111111111",
+            "type": "СБП",
+            "cardNumber": null,
+            "cardBrand": null,
+            "approvalCode": null
+          }
+        },
+        {
+          "paymentId": null,
+          "amountKop": 15000,
+          "amountRub": 150,
+          "lspu": "444444444444",
+          "source": "Юго-Западный банк ПАО Сбербанк",
+          "date": "2023-11-04T00:00:00.000Z",
+          "fiscalized": true,
+          "sentToProvider": true,
+          "savedToProvider": true,
+          "serviceName": "Газоснабжение природным газом",
+          "kktId": null,
+          "detail": {
+            "sbp": null,
+            "email": null,
+            "status": "Проведен",
+            "documentUuid": null,
+            "serviceUuid": "ffffffff-4444-4444-9999-222222222222",
+            "providerName": "Межрегионгаз Ростов-на-Дону",
+            "providerInn": "6167049710",
+            "id": null,
+            "session": null,
+            "order": null,
+            "type": null,
+            "cardNumber": null,
+            "cardBrand": null,
+            "approvalCode": null
+          }
+        }
+      ]
+    }
+  }
+}

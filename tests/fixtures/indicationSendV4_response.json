@@ -1,0 +1,20 @@
+{
+  "data": {
+    "indicationSendV4": {
+      "ok": true,
+      "error": null,
+      "data": [
+        {
+          "lspuId": 11111111,
+          "counters": [
+            {
+              "uuid": "66666666-bbbb-1111-8888-eeeeeeeeeeee",
+              "sent": true,
+              "message": "Показания счетчика успешно переданы"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

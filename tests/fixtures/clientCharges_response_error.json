@@ -1,0 +1,9 @@
+{
+  "data": {
+    "clientCharges": {
+      "ok": false,
+      "error": "Начисления не найдены",
+      "data": null
+    }
+  }
+}
