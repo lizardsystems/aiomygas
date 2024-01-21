@@ -1,5 +1,6 @@
 import json
 import unittest
+from pathlib import Path
 from unittest import mock
 from unittest.mock import MagicMock
 
@@ -10,13 +11,17 @@ from aiomygas import queries
 from aiomygas.api import MyGasApi
 from aiomygas.const import ATTR_DATA, ATTR_OK, ATTR_ERROR
 
+FIXTURES_PATH = Path(__file__).parent.absolute().joinpath("fixtures")
+
 
 class TestMyGasApi(unittest.IsolatedAsyncioTestCase):
     """Test MyGasApi class."""
+
     fixtures = [
         ("ClientV2_response.json", 'ClientV2', 'async_get_client_info', [], {}),
         ("AccountsN_response.json", 'Accounts', 'async_get_accounts', [], {}),
         ("elsInfo_response.json", 'ElsInfo', 'async_get_els_info', [123456789], {}),
+        ("lspuInfo_response.json", 'LspuInfo', 'async_get_lspu_info', [123456789], {}),
         ("paymentsByLspu_response.json", 'Payments', 'async_get_payments', [123456789], {}),
         ("indicationSendV4_response.json", 'IndicationSend', 'async_indication_send',
          [123456789, 123456789, "test_uuid", 123456789], {}),
@@ -40,7 +45,7 @@ class TestMyGasApi(unittest.IsolatedAsyncioTestCase):
         mock_get_token.return_value = "test_token"
         for file_name, query_name, method_name, args, kwargs in self.fixtures:
             query = getattr(queries, query_name)
-            with open(f"fixtures/{file_name}", encoding='utf-8') as json_file:
+            with open(FIXTURES_PATH.joinpath(file_name), encoding='utf-8') as json_file:
                 json_resp = json.load(json_file)
 
             self.session.post.return_value.__aenter__.return_value.status = 200
@@ -60,7 +65,7 @@ class TestMyGasApi(unittest.IsolatedAsyncioTestCase):
         fixtures = self.fixtures + self.error_fixtures
         for file_name, query_name, method_name, args, kwargs in fixtures:
             query = getattr(queries, query_name)
-            with open(f"fixtures/{file_name}", encoding='utf-8') as json_file:
+            with open(FIXTURES_PATH.joinpath(file_name), encoding='utf-8') as json_file:
                 json_resp = json.load(json_file)
                 if "error" not in file_name:
                     json_resp[ATTR_DATA][query.OPERATION_NAME][ATTR_OK] = False
@@ -87,7 +92,7 @@ class TestMyGasApi(unittest.IsolatedAsyncioTestCase):
         mock_get_token.return_value = "test_token"
         for file_name, query_name, method_name, args, kwargs in self.fixtures:
             query = getattr(queries, query_name)
-            with open(f"fixtures/{file_name}", encoding='utf-8') as json_file:
+            with open(FIXTURES_PATH.joinpath(file_name), encoding='utf-8') as json_file:
                 json_resp = json.load(json_file)
 
                 json_resp[ATTR_DATA][query.OPERATION_NAME][ATTR_OK] = True

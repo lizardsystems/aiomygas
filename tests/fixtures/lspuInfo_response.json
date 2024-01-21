@@ -1,0 +1,457 @@
+{
+    "data": {
+        "lspuInfo": {
+            "ok": true,
+            "error": null,
+            "info": {
+                "hasInfo": true,
+                "hasCounters": true,
+                "hasAutopay": false,
+                "paymentSourceAvailable": true,
+                "insuranceAvailable": true,
+                "isFull": true,
+                "alias": "",
+                "accountId": 33333333,
+                "account": "464666666666",
+                "balance": "0",
+                "providerId": 41,
+                "providerName": "Межрегионгаз Ростов-на-Дону",
+                "comissionTotal": 0,
+                "comissionThreshold": 0,
+                "actions": [
+                    {
+                        "type": "Pay",
+                        "iconUrl": "/file/clientActionIcons/Pay.png",
+                        "title": "Оплатить\nуслуги ",
+                        "description": "Задолженность\nне найдена",
+                        "value": null,
+                        "color": [
+                            "#3ECD9A",
+                            "#7AEB71"
+                        ]
+                    },
+                    {
+                        "type": "CounterSend",
+                        "iconUrl": "/file/clientActionIcons/CounterSend.png",
+                        "title": "Передать\nпоказания",
+                        "description": "По приборам\nучета",
+                        "value": null,
+                        "color": [
+                            "#3ECDC5",
+                            "#739CEC"
+                        ]
+                    }
+                ],
+                "alerts": [],
+                "services": [
+                    {
+                        "id": "02",
+                        "lspu": "464666666666",
+                        "lspuId": 33333333,
+                        "name": "Газоснабжение природным газом",
+                        "balance": "-212.37",
+                        "providerId": 41,
+                        "providerName": "ООО \"Газпром межрегионгаз Ростов-на-Дону\"",
+                        "providerExchangeName": "Онлайн",
+                        "providerExchangeCode": "EXCHANGE_TYPE_ONLINE",
+                        "providerExchangeDescription": "Получение, отправка и обновление информации происходит в рамках настроенного поставщиком времени (как правило, это от 30 сек. до 30 минут)",
+                        "comissionType": 0,
+                        "comissionRate": 0,
+                        "comissionAmount": 0,
+                        "isInsurance": false,
+                        "insuranceId": null,
+                        "children": [
+                            {
+                                "abonentUuid": "00000000-7777-1111-8888-eeeeeeeeeeee",
+                                "counterCoefficient": 1,
+                                "endDate": "",
+                                "equipmentUuid": "99999999-bbbb-1111-8888-eeeeeeeeeeee",
+                                "name": "Плита и колонка(+От)",
+                                "nodeUuid": "ffffffff-3333-4444-bbbb-999999999999",
+                                "norm": 29.52,
+                                "price": 7.328,
+                                "regimeUuid": "aaaaaaaa-7777-1111-9999-eeeeeeeeeeee",
+                                "serviceUuid": "ffffffff-4444-4444-9999-222222222222",
+                                "startDate": "2017-07-11T00:00:00",
+                                "tariff": 216.32256
+                            },
+                            {
+                                "abonentUuid": "00000000-7777-1111-8888-eeeeeeeeeeee",
+                                "counterCoefficient": 1,
+                                "endDate": "",
+                                "equipmentUuid": "99999999-bbbb-1111-8888-eeeeeeeeeeee",
+                                "name": "Отопление",
+                                "nodeUuid": "ffffffff-3333-4444-bbbb-999999999999",
+                                "norm": 12.4,
+                                "price": 7.328,
+                                "regimeUuid": "22222222-dddd-9999-aaaa-dddddddddddd",
+                                "serviceUuid": "ffffffff-4444-4444-9999-222222222222",
+                                "startDate": "2017-07-11T00:00:00",
+                                "tariff": 90.8672
+                            }
+                        ]
+                    },
+                    {
+                        "id": "04",
+                        "lspu": "464666666666",
+                        "lspuId": 33333333,
+                        "name": "Пеня за газ",
+                        "balance": "-0.68",
+                        "providerId": 41,
+                        "providerName": "ООО \"Газпром межрегионгаз Ростов-на-Дону\"",
+                        "providerExchangeName": "Онлайн",
+                        "providerExchangeCode": "EXCHANGE_TYPE_ONLINE",
+                        "providerExchangeDescription": "Получение, отправка и обновление информации происходит в рамках настроенного поставщиком времени (как правило, это от 30 сек. до 30 минут)",
+                        "comissionType": 0,
+                        "comissionRate": 0,
+                        "comissionAmount": 0,
+                        "isInsurance": false,
+                        "insuranceId": null,
+                        "children": []
+                    },
+                    {
+                        "id": "2222",
+                        "lspu": "111111111111",
+                        "lspuId": 33333333,
+                        "name": "Добровольное страхование имущества физических лиц",
+                        "balance": "150",
+                        "providerId": 167,
+                        "providerName": "АО «СОГАЗ»",
+                        "providerExchangeName": "",
+                        "providerExchangeCode": "",
+                        "providerExchangeDescription": "",
+                        "comissionType": 0,
+                        "comissionRate": 0,
+                        "comissionAmount": 0,
+                        "isInsurance": true,
+                        "insuranceId": null,
+                        "children": []
+                    }
+                ],
+                "counters": [
+                    {
+                        "lspuId": 33333333,
+                        "name": "BKG4T, № 04666666 (000450000)",
+                        "uuid": "99999999-bbbb-1111-8888-eeeeeeeeeeee",
+                        "serialNumber": "04666666",
+                        "numberOfRates": 1,
+                        "capacity": 5,
+                        "stateInt": 1,
+                        "state": "Работает",
+                        "notification": "",
+                        "averageRate": 17.4,
+                        "monthsCount": 12,
+                        "serviceName": "ГАЗ",
+                        "serviceLinkId": 1389,
+                        "needVerification": true,
+                        "position": "Отапливаемое помещение",
+                        "model": "BKG4T",
+                        "measure": "м3",
+                        "factorySeal": "",
+                        "equipmentKind": "Бытовой газовый счетчик",
+                        "meterType": 2,
+                        "checkDate": "2026-07-01T00:00:00",
+                        "techSupportDate": "",
+                        "sealDate": "2017-08-23T00:00:00",
+                        "factorySealDate": "",
+                        "commissionedOn": "2016-07-01T00:00:00",
+                        "values": [
+                            {
+                                "valueDay": 176,
+                                "valueMiddle": null,
+                                "valueNight": null,
+                                "overlap": false,
+                                "rate": "0",
+                                "state": "Приняты",
+                                "source": "",
+                                "date": "2024-01-09T00:00:00",
+                                "dateDt": "2024-01-08T21:00:00.000Z"
+                            },
+                            {
+                                "valueDay": 176,
+                                "valueMiddle": null,
+                                "valueNight": null,
+                                "overlap": false,
+                                "rate": "90",
+                                "state": "Приняты",
+                                "source": "",
+                                "date": "2023-12-31T00:00:00",
+                                "dateDt": "2023-12-30T21:00:00.000Z"
+                            }
+                        ],
+                        "tariff": 216.32256,
+                        "price": {
+                            "day": 7.328,
+                            "middle": 0,
+                            "night": 0
+                        }
+                    }
+                ],
+                "contracts": [
+                    {
+                        "active": false,
+                        "name": "44-4444444444 (Техническое обслуживание)",
+                        "number": "44-4444444444",
+                        "serviceName": "Техническое обслуживание",
+                        "beginDate": "2020-03-23T00:00:00.000Z",
+                        "endDate": "2023-03-23T00:00:00.000Z",
+                        "status": "Расторгнут",
+                        "contractKind": "Договор на ТО ВДГО",
+                        "description": "Договор на ТО ВДГО",
+                        "uuid": "00000000-9999-1111-8888-eeeeeeeeeeee",
+                        "serviceUuid": "aaaaaaaa-1111-4444-8888-cccccccccccc",
+                        "notification": null
+                    },
+                    {
+                        "active": true,
+                        "name": "111111 (Газоснабжение природным газом)",
+                        "number": "111111",
+                        "serviceName": "Газоснабжение природным газом",
+                        "beginDate": "2017-01-21T00:00:00.000Z",
+                        "endDate": null,
+                        "status": "Заключен",
+                        "contractKind": "Купли-продажи (Газоснабжение)",
+                        "description": "Купли-продажи (Газоснабжение)",
+                        "uuid": "44444444-7777-1111-8888-eeeeeeeeeeee",
+                        "serviceUuid": "ffffffff-4444-4444-9999-222222222222",
+                        "notification": null
+                    }
+                ],
+                "equipments": [
+                    {
+                        "type": "Плита",
+                        "name": "Плита газовая 4х конфорочная, №  (000000000)",
+                        "uuid": "11111111-7777-1111-8888-eeeeeeeeeeee",
+                        "serialNumber": "",
+                        "state": "Работает",
+                        "needVerification": true,
+                        "numberOfRates": 1,
+                        "municipalResource": 4,
+                        "meterType": 2,
+                        "stateInt": 1,
+                        "position": "",
+                        "model": "Плита газовая 4х конфорочная",
+                        "factorySeal": "",
+                        "equipmentKind": "Плита газовая 4-х конфорочная",
+                        "date": "2017-04-14T00:00:00",
+                        "checkDate": "",
+                        "techSupportDate": "",
+                        "sealDate": "",
+                        "factorySealDate": "",
+                        "commissionedOn": "",
+                        "notification": "",
+                        "color": [
+                            "#3ECD9A",
+                            "#7AEB71"
+                        ]
+                    },
+                    {
+                        "type": "Колонка",
+                        "name": "ВПГ 11, №  (000000000)",
+                        "uuid": "22222222-7777-1111-8888-eeeeeeeeeeee",
+                        "serialNumber": "",
+                        "state": "Работает",
+                        "needVerification": true,
+                        "numberOfRates": 1,
+                        "municipalResource": 4,
+                        "meterType": 2,
+                        "stateInt": 1,
+                        "position": "",
+                        "model": "ВПГ 11",
+                        "factorySeal": "",
+                        "equipmentKind": "Водонагреватель проточный газовый автоматический",
+                        "date": "2017-03-13T00:00:00",
+                        "checkDate": "",
+                        "techSupportDate": "",
+                        "sealDate": "",
+                        "factorySealDate": "",
+                        "commissionedOn": "",
+                        "notification": "",
+                        "color": [
+                            "#3ECD9A",
+                            "#7AEB71"
+                        ]
+                    },
+                    {
+                        "type": "Котел",
+                        "name": "Baxi 31, №  (000000000)",
+                        "uuid": "22222222-7777-1111-8888-eeeeeeeeeeee",
+                        "serialNumber": "",
+                        "state": "Работает",
+                        "needVerification": true,
+                        "numberOfRates": 1,
+                        "municipalResource": 4,
+                        "meterType": 2,
+                        "stateInt": 1,
+                        "position": "",
+                        "model": "Baxi 31",
+                        "factorySeal": "",
+                        "equipmentKind": "Энергозависимый настенный котёл марки Navien, Immergas, Protherm, Siberia, Vaillant, Hermann и др.",
+                        "date": "2017-03-13T00:00:00",
+                        "checkDate": "",
+                        "techSupportDate": "",
+                        "sealDate": "",
+                        "factorySealDate": "",
+                        "commissionedOn": "",
+                        "notification": "",
+                        "color": [
+                            "#3ECD9A",
+                            "#7AEB71"
+                        ]
+                    }
+                ],
+                "tickets": [],
+                "balances": [
+                    {
+                        "uuid": "bbbbbbbb-aaaa-4444-aaaa-111111111111",
+                        "date": "2024-01-01T03:00:00",
+                        "name": "Пеня за газ",
+                        "balanceStartSum": "-0.68",
+                        "balanceEndSum": "-0.68",
+                        "chargedSum": "0",
+                        "chargedVolume": "0",
+                        "circulationSum": "0.0",
+                        "forgivenDebt": "0",
+                        "organizationCode": "3330000047",
+                        "paymentAdjustments": "0",
+                        "plannedSum": "0",
+                        "privilegeSum": "0",
+                        "privilegeVolume": "0",
+                        "restoredDebt": "0",
+                        "endBalanceApgp": "-0.68",
+                        "prepaymentChargedAccumSum": "0",
+                        "debtSum": "0",
+                        "paidSum": "0",
+                        "children": []
+                    },
+                    {
+                        "uuid": "ffffffff-4444-4444-9999-222222222222",
+                        "date": "2024-01-01T03:00:00",
+                        "name": "Газоснабжение природным газом",
+                        "balanceStartSum": "447.63",
+                        "balanceEndSum": "-212.37",
+                        "chargedSum": "0",
+                        "chargedVolume": "0",
+                        "circulationSum": "0.0",
+                        "forgivenDebt": "0",
+                        "organizationCode": "3330000047",
+                        "paymentAdjustments": "0",
+                        "plannedSum": "0",
+                        "privilegeSum": "0",
+                        "privilegeVolume": "0",
+                        "restoredDebt": "0",
+                        "endBalanceApgp": "-212.37",
+                        "prepaymentChargedAccumSum": "0",
+                        "debtSum": "0",
+                        "paidSum": "660",
+                        "children": []
+                    }
+                ],
+                "payments": [
+                    {
+                        "uuid": null,
+                        "date": "2024-01-09T00:00:00",
+                        "paidSum": "660",
+                        "serviceName": "Газоснабжение природным газом",
+                        "serviceUuid": "f4aff61d-4b49-4c53-9632-28632b003964",
+                        "source": "Юго-Западный банк ПАО Сбербанк",
+                        "status": "Проведен",
+                        "internalCode": null,
+                        "transactionNumber": "09-01-2024;5555;555555555555;444444444444;ччччччччччч ллллллл ййййййййй; Пред.пок. 167; Нов.пок. 176; газ 660,00; Пеня 0,00; ТО 0,00; Ремонт 0,00; Уст.ПУГ 0,00",
+                        "color": [
+                            "#3ECD9A",
+                            "#7AEB71"
+                        ],
+                        "cardNumber": null,
+                        "externalCode": null,
+                        "approval": null
+                    },
+                    {
+                        "uuid": null,
+                        "date": "2023-12-10T00:00:00",
+                        "paidSum": "100",
+                        "serviceName": "Газоснабжение природным газом",
+                        "serviceUuid": "f4aff61d-4b49-4c53-9632-28632b003964",
+                        "source": "Юго-Западный банк ПАО Сбербанк",
+                        "status": "Проведен",
+                        "internalCode": null,
+                        "transactionNumber": "10-12-2023;5555;888888888888;444444444444;ччччччччччч ллллллл ййййййййй; Пред.пок. 167; Нов.пок. 169 газ 100,00; Пеня 0,00; ТО 0,00; Ремонт 0,00; Уст.ПУГ 0,00",
+                        "color": [
+                            "#3ECD9A",
+                            "#7AEB71"
+                        ],
+                        "cardNumber": null,
+                        "externalCode": null,
+                        "approval": null
+                    }
+                ],
+                "acts": [
+                    {
+                        "uuid": "44444444-9999-1111-8888-eeeeeeeeeeee",
+                        "name": "Акт выполненных работ P000000000000000 от 22.01.2021 14:51:26",
+                        "data": "2021-01-22T00:00:00.000Z",
+                        "works": [
+                            {
+                                "sum": "441",
+                                "serviceUuid": "33333333-cccc-1111-8888-eeeeeeeeeeee",
+                                "serviceName": "***",
+                                "equipmentUuid": "99999999-bbbb-1111-8888-eeeeeeeeeeee",
+                                "equipmentName": "BKG4T, № 04666666 (000000000)"
+                            },
+                            {
+                                "sum": "1089",
+                                "serviceUuid": "bbbbbbbb-cccc-1111-8888-eeeeeeeeeeee",
+                                "serviceName": "***",
+                                "equipmentUuid": "99999999-bbbb-1111-8888-eeeeeeeeeeee",
+                                "equipmentName": "BKG4T, № 04666666 (000000000)"
+                            }
+                        ]
+                    }
+                ],
+                "parameters": [
+                    {
+                        "date": "2017-07-11T00:00:00",
+                        "name": "Количество проживающих",
+                        "value": "1"
+                    },
+                    {
+                        "date": "2017-07-11T00:00:00",
+                        "name": "Использование среднегодовых тарифов",
+                        "value": "Нет"
+                    },
+                    {
+                        "date": "2017-07-11T00:00:00",
+                        "name": "Наличие горячего водоснабжения",
+                        "value": "Нет"
+                    },
+                    {
+                        "date": "2017-07-11T00:00:00",
+                        "name": "Площадь жилая",
+                        "value": "43,1"
+                    },
+                    {
+                        "date": "2017-07-11T00:00:00",
+                        "name": "Вид договора",
+                        "value": "Купли-продажи (Газоснабжение)"
+                    },
+                    {
+                        "date": "",
+                        "name": "Электронная почта",
+                        "value": "llllllll@mail.ru "
+                    },
+                    {
+                        "date": "",
+                        "name": "Телефон",
+                        "value": "928 777 77 77"
+                    },
+                    {
+                        "date": "",
+                        "name": "Адрес",
+                        "value": "347923, Ростовская обл, г Таганрог, ул Ленина, д. 39, кв. 3"
+                    }
+                ],
+                "privileges": []
+            }
+        }
+    }
+}

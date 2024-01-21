@@ -32,6 +32,11 @@ class MyGasApi:
         query = queries.ElsInfo(els_id)
         return await self._auth.async_request(query)
 
+    async def async_get_lspu_info(self, lspu_id: int):
+        """Get lspu data."""
+        query = queries.LspuInfo(lspu_id)
+        return await self._auth.async_request(query)
+
     async def async_get_charges(self, lspu_id: int):
         """Get charges data."""
         query = queries.Charges(lspu_id)

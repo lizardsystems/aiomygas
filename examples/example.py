@@ -1,6 +1,7 @@
 """ Example showing usage of this library """
 
 import asyncio
+from pprint import pprint
 
 import aiohttp
 
@@ -16,6 +17,21 @@ async def main(email: str, password: str) -> None:
         api = MyGasApi(auth)
         # get the accounts
         data = await api.async_get_accounts()
+
+        # for els account
+        for els in data["elsGroup"]:
+            els_id = els["els"]["id"]
+            els_data = await api.async_get_els_info(els_id)
+            print(f"els {els_id}")
+            pprint(els_data)
+
+        # lspu account
+        for lspu in data["lspu"]:
+            lspu_id = lspu["id"]
+            lspu_data = await api.async_get_lspu_info(lspu_id)
+            print(f"lspu {lspu_id}")
+            pprint(lspu_data)
+
         # print the accounts
         print(data)
 
