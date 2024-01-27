@@ -18,11 +18,11 @@ query receipt($dateIsoShort: String, $email: String, $isEls: Boolean!, $id: Floa
 }
 """
 
-    def __init__(self, date_iso_short: str, email: str, is_els: bool, els_id: int) -> None:
+    def __init__(self, date_iso_short: str, email: str, account_id: int, is_els: bool) -> None:
         """Initialize."""
         self.variables = {
             ATTR_DATE_ISO_SHORT: date_iso_short,
             ATTR_EMAIL: email,
             ATTR_IS_ELS: is_els,
-            ATTR_ID: els_id
+            ATTR_ID: account_id
         }

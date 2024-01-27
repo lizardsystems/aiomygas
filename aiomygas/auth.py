@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import time
 from abc import ABC, abstractmethod
-from typing import Any, Optional, Dict, cast
+from typing import Any, cast
 
 from aiohttp import ClientSession, hdrs
 
@@ -19,7 +19,7 @@ class AbstractMyGasAuth(ABC):
     """Abstract class to make authenticated requests."""
     _session: ClientSession
     _endpoint: str
-    _headers: Dict[str, str]
+    _headers: dict[str, str]
 
     def __init__(self, session: ClientSession):
         """Initialize the auth."""
@@ -60,12 +60,12 @@ class SimpleMyGasAuth(AbstractMyGasAuth):
     """Simple implementation of AbstractMyGasAuth"""
     _identifier: str
     _password: str
-    _token: Optional[Dict[str, Any]] = {}
+    _token: dict[str, Any] = {}
 
     def __init__(self,
                  identifier: str,
                  password: str,
-                 session: ClientSession):
+                 session: ClientSession) -> None:
         """Initialize the auth."""
         super().__init__(session)
         self._identifier = identifier

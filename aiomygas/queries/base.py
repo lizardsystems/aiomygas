@@ -1,6 +1,6 @@
 """Base class fro GraphQL queries."""
 from abc import ABC
-from typing import Any, Dict
+from typing import Any
 
 from ..const import ATTR_ERROR, ATTR_OK, ATTR_DATA, ATTR_VARIABLES, ATTR_QUERY, ATTR_OPERATION_NAME
 from ..exceptions import MyGasApiParseError, MyGasApiError
@@ -11,9 +11,9 @@ class BaseQuery(ABC):
     OPERATION_NAME: str
     DATA_NAME: str | tuple
     QUERY: str
-    variables: Dict[str, Any] = {}
+    variables: dict[str, Any] = {}
 
-    def parse(self, response: Dict[str, Any]) -> Any:
+    def parse(self, response: dict[str, Any]) -> Any:
         """Parse response."""
         operation = response.get(ATTR_DATA, {}).get(self.OPERATION_NAME, {})
         ok = operation.get(ATTR_OK, False)
@@ -34,7 +34,7 @@ class BaseQuery(ABC):
         else:
             raise MyGasApiError(error or "Invalid API response")
 
-    def to_json(self) -> Dict[str, Any]:
+    def to_json(self) -> dict[str, Any]:
         """Return the payload."""
         return {
             ATTR_OPERATION_NAME: self.OPERATION_NAME,

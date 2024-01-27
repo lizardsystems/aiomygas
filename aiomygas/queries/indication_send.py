@@ -26,11 +26,10 @@ mutation indicationSendV4($input: IndicationSendV4Input!, $deviceInfo: DeviceInf
 }
 """
 
-    def __init__(self, els_id, lspu_id: int, uuid: str, value_day: int | float) -> None:
+    def __init__(self, lspu_id: int, uuid: str, value_day: int | float, els_id: int | None = None) -> None:
         """Initialize."""
         self.variables = {
             'input': {
-                ATTR_ELS_ID: els_id,
                 "lspuGroups": [{
                     ATTR_LSPU_ID: lspu_id,
                     "counters": [{
@@ -49,3 +48,5 @@ mutation indicationSendV4($input: IndicationSendV4Input!, $deviceInfo: DeviceInf
             },
             ATTR_DEVICE_INFO: DEVICE_INFO
         }
+        if els_id is not None:
+            self.variables['input'][ATTR_ELS_ID] = els_id
