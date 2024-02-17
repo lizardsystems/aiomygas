@@ -280,11 +280,11 @@ This will return accounts list that looks a little like this:
 
 ## Timeouts
 
-aiomygas does not specify any timeouts for any requests. You will need to specify them in your own code. We recommend the `async_timeout` package:
+aiomygas does not specify any timeouts for any requests. You will need to specify them in your own code. We recommend the `asyncio.timeout`:
 
 ```python
-import async_timeout
+import asyncio
 
-with async_timeout.timeout(10):
+with asyncio.timeout(10):
     data = await api.async_get_accounts()
 ```
