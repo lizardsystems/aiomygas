@@ -29,8 +29,8 @@ HEADER_TOKEN: Final = "token"
 MOBILE_APP_NAME = "mobile"
 DESKTOP_APP_NAME = "desktop"
 APP_VERSION = {
-    MOBILE_APP_NAME: "7.5.14",
-    DESKTOP_APP_NAME: "7.5.15"
+    MOBILE_APP_NAME: "7.5.18",
+    DESKTOP_APP_NAME: "7.5.18"
 }
 DEFAULT_DEVICE_INFO = {
     "appName": "mobile",
