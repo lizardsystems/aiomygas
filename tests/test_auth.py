@@ -1,6 +1,7 @@
 import json
 import time
 import unittest
+from pathlib import Path
 from unittest import IsolatedAsyncioTestCase
 from unittest import mock
 
@@ -10,6 +11,8 @@ from aiomygas.auth import SimpleMyGasAuth
 from aiomygas.const import CLIENT_SESSION_LIFETIME
 from aiomygas.exceptions import MyGasAuthError
 
+FIXTURES_PATH = Path(__file__).parent.absolute().joinpath("fixtures")
+
 
 class TestSimpleMyGasAuth(IsolatedAsyncioTestCase):
     json_fixtures = ["signInN3_response", "signInN3_response_error"]  # list of json fixtures
@@ -18,7 +21,7 @@ class TestSimpleMyGasAuth(IsolatedAsyncioTestCase):
         """Load a fixtures."""
         fixtures = {}
         for fixture in self.json_fixtures:
-            with open(f"fixtures/{fixture}.json", encoding='utf-8') as json_file:
+            with open(FIXTURES_PATH.joinpath(f"{fixture}.json"), encoding='utf-8') as json_file:
                 fixtures[fixture] = json.load(json_file)
         return fixtures
 

@@ -1,4 +1,6 @@
 """GraphQL queries for ELS Info."""
+from __future__ import annotations
+
 from .base import BaseQuery
 from ..const import ATTR_ELS_ID
 

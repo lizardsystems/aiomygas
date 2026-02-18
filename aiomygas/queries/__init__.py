@@ -1,4 +1,6 @@
 """MyGas GraphQL queries."""
+from __future__ import annotations
+
 from .accounts import Accounts
 from .base import BaseQuery
 from .charges import Charges

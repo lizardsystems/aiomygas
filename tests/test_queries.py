@@ -59,6 +59,40 @@ class TestBaseQuery(IsolatedAsyncioTestCase):
         with self.assertRaises(MyGasApiParseError) as error:
             self.query.parse(response)
 
+    def test_parse_tuple_data_name(self):
+        """Test parse method with tuple DATA_NAME."""
+        self.query.OPERATION_NAME = "test"
+        self.query.DATA_NAME = ("key_a", "key_b")
+        response = {
+            "data": {
+                "test": {
+                    "ok": True,
+                    "error": None,
+                    "key_a": "value_a",
+                    "key_b": "value_b",
+                }
+            }
+        }
+        result = self.query.parse(response)
+        self.assertEqual(result, {"key_a": "value_a", "key_b": "value_b"})
+
+    def test_parse_tuple_data_name_missing_key(self):
+        """Test parse method with tuple DATA_NAME and missing key."""
+        self.query.OPERATION_NAME = "test"
+        self.query.DATA_NAME = ("key_a", "key_b")
+        response = {
+            "data": {
+                "test": {
+                    "ok": True,
+                    "error": None,
+                    "key_a": "value_a",
+                }
+            }
+        }
+        with self.assertRaises(MyGasApiParseError) as error:
+            self.query.parse(response)
+        self.assertEqual(str(error.exception), "Key key_b not found in response")
+
     def test_parse_exception_invalid(self):
         """Test parse method with empty api response."""
         self.query.OPERATION_NAME = "test"
@@ -68,3 +102,15 @@ class TestBaseQuery(IsolatedAsyncioTestCase):
             self.query.parse(response)
 
         self.assertEqual(str(error.exception), "Invalid API response")
+
+    def test_to_json(self):
+        """Test to_json method."""
+        self.query.OPERATION_NAME = "test"
+        self.query.QUERY = "query test { test { ok } }"
+        self.query.variables = {"key": "value"}
+        result = self.query.to_json()
+        self.assertEqual(result, {
+            "operationName": "test",
+            "query": "query test { test { ok } }",
+            "variables": {"key": "value"},
+        })

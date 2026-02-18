@@ -1,4 +1,6 @@
 """GraphQL queries for payments."""
+from __future__ import annotations
+
 from .base import BaseQuery
 from ..const import ATTR_LSPU_ID
 

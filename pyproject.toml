@@ -1,16 +1,16 @@
 [build-system]
-requires = ["setuptools>=64", "setuptools_scm>=8"]
+requires = ["setuptools>=64"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "aiomygas"
+version = "2.4.0"
 dependencies = [
-    "aiohttp"
+    "aiohttp>=3"
 ]
-dynamic = ["version"]
 description = "Asynchronous Python API For My Gas"
 readme = "README.md"
-requires-python = ">=3.9.0"
+requires-python = ">=3.13"
 keywords = [
     "energy",
     "gas"
@@ -23,10 +23,8 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Programming Language :: Python :: 3 :: Only",
     "Typing :: Typed",
 ]
@@ -36,23 +34,27 @@ Home = "https://github.com/lizardsystems/aiomygas"
 Repository = "https://github.com/lizardsystems/aiomygas"
 Documentation = "https://github.com/lizardsystems/aiomygas"
 "Bug Tracker" = "https://github.com/lizardsystems/aiomygas/issues"
-Changelog = "https://github.com/lizardsystems/aiomygas/blob/master/CHANGELOG.md"
+Changelog = "https://github.com/lizardsystems/aiomygas/blob/main/CHANGELOG.md"
 
 [[project.authors]]
 name = "LizardSystems"
 
-[tool.setuptools_scm]
-version_file = "aiomygas/_version.py"
-local_scheme = "no-local-version"
-version_scheme = "no-guess-dev"
-
-[tool.setuptools]
-platforms = ["any"]
-include-package-data = true
-package-data = {"aiomygas" = ["py.typed"]}
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-asyncio",
+]
 
 [project.scripts]
 aiomygas-cli = "aiomygas.__main__:main"
 
+[tool.setuptools]
+platforms = ["any"]
+include-package-data = true
+package-data = {"aiomygas" = ["py.typed", "devices.json"]}
+
 [tool.setuptools.packages.find]
 include = ["aiomygas*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

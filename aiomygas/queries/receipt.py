@@ -1,4 +1,6 @@
 """GraphQL queries for receipt."""
+from __future__ import annotations
+
 from .base import BaseQuery
 from ..const import ATTR_DATE_ISO_SHORT, ATTR_EMAIL, ATTR_IS_ELS, ATTR_ID
 

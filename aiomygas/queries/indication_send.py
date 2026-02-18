@@ -1,4 +1,6 @@
 """GraphQL query for sending indication to MyGas API."""
+from __future__ import annotations
+
 from .base import BaseQuery
 from ..const import ATTR_ELS_ID, ATTR_LSPU_ID, ATTR_DEVICE_INFO
 from ..device_info import DEVICE_INFO

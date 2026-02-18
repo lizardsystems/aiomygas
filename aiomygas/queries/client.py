@@ -1,4 +1,6 @@
 """GraphQL queries for client."""
+from __future__ import annotations
+
 from .base import BaseQuery
 
 

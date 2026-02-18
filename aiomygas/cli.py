@@ -1,4 +1,4 @@
-"""Provide a CLI for TNS-Energo API."""
+"""Provide a CLI for MyGas API."""
 from __future__ import annotations
 
 import argparse
@@ -9,7 +9,7 @@ from typing import Any
 
 from aiohttp import ClientSession
 
-from ._version import __version__
+from . import __version__
 from .api import MyGasApi
 from .auth import SimpleMyGasAuth
 from .const import LOG_LEVELS
@@ -51,10 +51,6 @@ async def cli() -> None:
 
     # Setup logging and the log level according to the "-v" option
     logging.basicConfig(level=LOG_LEVELS.get(args.verbose, logging.INFO))
-
-    if not args.identifier or not args.password:
-        print("Please provide username and password")
-        return
 
     identifier = args.identifier
     password = args.password
@@ -215,9 +211,6 @@ async def get_receipts(api: MyGasApi, identifier: str, accounts: dict[str, Any])
             if els_group['els']['alias']:
                 print(f"Alias: {els_group['els']['alias']}")
             try:
-                # for lspu in els_group["lspu"]:
-                #     _receipt = await api.async_get_receipt(day, email, lspu['id'], False)
-                #     pprint(_receipt)
                 _receipt = await api.async_get_receipt(day, email, els_group['els']['id'], True)
                 pprint(_receipt)
             except Exception as e:

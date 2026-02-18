@@ -1,13 +1,16 @@
 """Test device_info module."""
 import unittest
+from pathlib import Path
 from unittest.mock import mock_open, patch
 
 from aiomygas.const import DEFAULT_DEVICE_INFO, APP_VERSION, MOBILE_APP_NAME, DEFAULT_MOBILE_BROWSER
 from aiomygas.device_info import get_device_info
 
+FIXTURES_PATH = Path(__file__).parent.absolute().joinpath("fixtures")
+
 
 def device_info_fixture(filename):
-    with open(f"fixtures/{filename}", encoding='utf-8') as f:
+    with open(FIXTURES_PATH.joinpath(filename), encoding='utf-8') as f:
         return f.read()
 
 
@@ -30,7 +33,7 @@ class TestDeviceInfo(unittest.TestCase):
         device_info = get_device_info()
         self.assertEqual(device_info, expected_device_info)
 
-    @patch('builtins.open', side_effect=Exception)
+    @patch('builtins.open', side_effect=OSError)
     def test_get_device_info_exception(self, mock_file):
         """Test get_device_info method with exception."""
         expected_device_info = DEFAULT_DEVICE_INFO

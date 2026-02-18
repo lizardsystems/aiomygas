@@ -1,19 +1,23 @@
 """MyGas API wrapper."""
 from __future__ import annotations
 
+from importlib.metadata import PackageNotFoundError, version
+
 try:
-    from ._version import version as __version__
-    from ._version import version_tuple
-except ImportError:
-    __version__ = "unknown version"
-    version_tuple = (0, 0, "unknown version")
+    __version__ = version("aiomygas")
+except PackageNotFoundError:
+    __version__ = "0.0.0"
 
 from .api import MyGasApi
 from .auth import AbstractMyGasAuth, SimpleMyGasAuth
+from .exceptions import MyGasApiError, MyGasApiParseError, MyGasAuthError
 
 __all__ = [
     "MyGasApi",
     "AbstractMyGasAuth",
     "SimpleMyGasAuth",
-    __version__
+    "MyGasApiError",
+    "MyGasApiParseError",
+    "MyGasAuthError",
+    "__version__",
 ]

@@ -5,5 +5,11 @@ import asyncio
 
 from aiomygas.cli import cli
 
-if __name__ == "__main__":
+
+def main() -> None:
+    """Run CLI."""
     asyncio.run(cli())
+
+
+if __name__ == "__main__":
+    main()

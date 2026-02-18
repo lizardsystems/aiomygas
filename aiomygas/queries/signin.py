@@ -1,4 +1,6 @@
 """GraphQL queries for sign-in."""
+from __future__ import annotations
+
 from .base import BaseQuery
 from ..const import ATTR_DEVICE_INFO
 from ..device_info import DEVICE_INFO

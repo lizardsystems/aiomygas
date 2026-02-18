@@ -1,4 +1,6 @@
-"""Base class fro GraphQL queries."""
+"""Base class for GraphQL queries."""
+from __future__ import annotations
+
 from abc import ABC
 from typing import Any
 
@@ -7,11 +9,14 @@ from ..exceptions import MyGasApiParseError, MyGasApiError
 
 
 class BaseQuery(ABC):
-    """Base class fro GraphQL queries."""
+    """Base class for GraphQL queries."""
     OPERATION_NAME: str
     DATA_NAME: str | tuple
     QUERY: str
-    variables: dict[str, Any] = {}
+
+    def __init__(self) -> None:
+        """Initialize the query."""
+        self.variables: dict[str, Any] = {}
 
     def parse(self, response: dict[str, Any]) -> Any:
         """Parse response."""

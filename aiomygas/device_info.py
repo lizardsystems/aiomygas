@@ -1,16 +1,21 @@
 """Device info."""
+from __future__ import annotations
+
 import json
+from pathlib import Path
 from random import choice
 from typing import Any
 
 from .const import DEFAULT_DEVICE_INFO, APP_VERSION, ATTR_BROWSER, ATTR_SYSTEM, ATTR_SCREEN_RESOLUTION, \
     ATTR_DEVICE, ATTR_APP_VERSION, ATTR_APP_NAME
 
+_DEVICES_FILE = Path(__file__).parent / "devices.json"
+
 
 def get_device_info() -> dict[str, Any]:
     """Get device info."""
     try:
-        with open('devices.json', 'r') as f:
+        with open(_DEVICES_FILE, encoding="utf-8") as f:
             devices = json.load(f)
             app_name = choice(list(devices))
             system = choice(list(devices[app_name]))
@@ -22,7 +27,7 @@ def get_device_info() -> dict[str, Any]:
                 ATTR_SCREEN_RESOLUTION: choice(devices[app_name][system][ATTR_SCREEN_RESOLUTION]),
                 ATTR_SYSTEM: system
             }
-    except Exception as e:  # noqa
+    except (OSError, json.JSONDecodeError, KeyError, IndexError):
         device_info = DEFAULT_DEVICE_INFO
     return device_info
 

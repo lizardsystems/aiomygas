@@ -1,5 +1,8 @@
-from aiomygas.const import ATTR_LSPU_ID
-from aiomygas.queries import BaseQuery
+"""GraphQL queries for LSPU Info."""
+from __future__ import annotations
+
+from ..const import ATTR_LSPU_ID
+from .base import BaseQuery
 
 
 class LspuInfo(BaseQuery):
