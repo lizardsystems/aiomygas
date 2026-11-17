@@ -13,7 +13,7 @@ from .const import LOGGER, CLOCK_OUT_OF_SYNC_MAX_SEC, HEADER_TOKEN, CLIENT_SESSI
     DEFAULT_ENDPOINT, DEFAULT_HOST, DEFAULT_ORIGIN, DEFAULT_REFERER, DEFAULT_MOBILE_BROWSER, ATTR_EXPIRES_AT, \
     ATTR_TOKEN, ATTR_BROWSER
 from .device_info import DEVICE_INFO
-from .exceptions import MyGasAuthError, MyGasApiError, MyGasApiParseError
+from .exceptions import MyGasAuthError, MyGasApiError, MyGasApiParseError, MyGasConnectionError
 
 
 class AbstractMyGasAuth(ABC):
@@ -53,8 +53,8 @@ class AbstractMyGasAuth(ABC):
                 r = await resp.json()
                 LOGGER.debug("Response: %s", r)
                 return query.parse(r)
-        except ClientError as err:
-            raise MyGasApiError(f"HTTP request failed: {err}") from err
+        except (ClientError, TimeoutError) as err:
+            raise MyGasConnectionError(f"HTTP request failed: {err}") from err
 
 
 class SimpleMyGasAuth(AbstractMyGasAuth):
@@ -84,6 +84,11 @@ class SimpleMyGasAuth(AbstractMyGasAuth):
             ) as resp:
                 r = await resp.json()
                 LOGGER.debug("Response: %s", r)
+                data = r.get("data") if isinstance(r, dict) else None
+                if not isinstance(data, dict) or not data.get(query.OPERATION_NAME):
+                    # No sign-in result at all (e.g. GraphQL server error):
+                    # the server did not judge the credentials
+                    raise MyGasApiParseError(f"Invalid sign-in response: {r}")
                 try:
                     response = query.parse(r)
                     token = response[ATTR_TOKEN]
@@ -93,10 +98,16 @@ class SimpleMyGasAuth(AbstractMyGasAuth):
                         ATTR_TOKEN: token,
                         ATTR_EXPIRES_AT: expires_at
                     }
+                except MyGasApiParseError:
+                    # Malformed but successful response: not a credentials problem
+                    raise
                 except MyGasApiError as e:
+                    # The server answered ok=false: credentials were rejected
                     raise MyGasAuthError(e) from e
-        except ClientError as err:
-            raise MyGasAuthError(f"Token request failed: {err}") from err
+        except (ClientError, TimeoutError) as err:
+            # Network, DNS, timeout, non-2xx status or non-JSON body:
+            # transient, the stored credentials may still be valid
+            raise MyGasConnectionError(f"Token request failed: {err}") from err
 
     @staticmethod
     def _is_valid_token(token: dict[str, Any]) -> bool:

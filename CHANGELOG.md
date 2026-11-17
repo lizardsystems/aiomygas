@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.5.0] - 2026-11-17
+
+### Added
+
+- `MyGasConnectionError` (subclass of `MyGasApiError`) for network, DNS, timeout and HTTP status errors.
+
+### Fixed
+
+- Network failures during sign-in (DNS errors, connection timeouts, HTTP 4xx/5xx, non-JSON responses) no longer raise `MyGasAuthError`. They raise `MyGasConnectionError`, so callers can retry instead of asking the user for the password again.
+- A sign-in response without a `signInN3` result, or without a token, raises `MyGasApiParseError` instead of `MyGasAuthError`.
+- `MyGasAuthError` is now raised only when the server rejects the credentials (`ok: false`).
+
+### Changed
+
+- Data requests raise `MyGasConnectionError` on network failures (was the base `MyGasApiError`; existing `except MyGasApiError` handlers still catch it).
+
 ## [2.4.0] - 2026-02-18
 
 ### Fixed

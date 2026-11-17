@@ -10,7 +10,12 @@ except PackageNotFoundError:
 
 from .api import MyGasApi
 from .auth import AbstractMyGasAuth, SimpleMyGasAuth
-from .exceptions import MyGasApiError, MyGasApiParseError, MyGasAuthError
+from .exceptions import (
+    MyGasApiError,
+    MyGasApiParseError,
+    MyGasAuthError,
+    MyGasConnectionError,
+)
 
 __all__ = [
     "MyGasApi",
@@ -19,5 +24,6 @@ __all__ = [
     "MyGasApiError",
     "MyGasApiParseError",
     "MyGasAuthError",
+    "MyGasConnectionError",
     "__version__",
 ]

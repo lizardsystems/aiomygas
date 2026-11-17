@@ -11,4 +11,8 @@ class MyGasApiParseError(MyGasApiError):
 
 
 class MyGasAuthError(MyGasApiError):
-    """Base class for aiomygas auth errors"""
+    """Exception class for credentials rejected by the server"""
+
+
+class MyGasConnectionError(MyGasApiError):
+    """Exception class for transient network and HTTP errors"""

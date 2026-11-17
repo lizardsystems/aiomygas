@@ -49,7 +49,8 @@ All exceptions inherit from `MyGasApiError`:
 
 - `MyGasApiError` — base class for all API errors
 - `MyGasApiParseError` — response parsing errors
-- `MyGasAuthError` — authentication errors
+- `MyGasAuthError` — the server rejected the credentials; ask the user for a new password
+- `MyGasConnectionError` — network, DNS, timeout or HTTP status errors; transient, retry later
 
 ## Timeouts
 
