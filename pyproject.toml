@@ -30,14 +30,14 @@ classifiers = [
 ]
 
 [project.urls]
-Home = "https://github.com/lizardsystems/aiomygas"
-Repository = "https://github.com/lizardsystems/aiomygas"
-Documentation = "https://github.com/lizardsystems/aiomygas"
-"Bug Tracker" = "https://github.com/lizardsystems/aiomygas/issues"
-Changelog = "https://github.com/lizardsystems/aiomygas/blob/main/CHANGELOG.md"
+Home = "https://github.com/ru-smarthome/aiomygas"
+Repository = "https://github.com/ru-smarthome/aiomygas"
+Documentation = "https://github.com/ru-smarthome/aiomygas"
+"Bug Tracker" = "https://github.com/ru-smarthome/aiomygas/issues"
+Changelog = "https://github.com/ru-smarthome/aiomygas/blob/main/CHANGELOG.md"
 
 [[project.authors]]
-name = "LizardSystems"
+name = "ru-smarthome"
 
 [project.optional-dependencies]
 test = [

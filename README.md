@@ -2,8 +2,8 @@
 
 [![PyPI](https://img.shields.io/pypi/v/aiomygas)](https://pypi.org/project/aiomygas/)
 [![Python](https://img.shields.io/pypi/pyversions/aiomygas)](https://pypi.org/project/aiomygas/)
-[![License](https://img.shields.io/pypi/l/aiomygas)](https://github.com/lizardsystems/aiomygas/blob/main/LICENSE)
-[![CI](https://github.com/lizardsystems/aiomygas/actions/workflows/ci.yml/badge.svg)](https://github.com/lizardsystems/aiomygas/actions/workflows/ci.yml)
+[![License](https://img.shields.io/pypi/l/aiomygas)](https://github.com/ru-smarthome/aiomygas/blob/main/LICENSE)
+[![CI](https://github.com/ru-smarthome/aiomygas/actions/workflows/ci.yml/badge.svg)](https://github.com/ru-smarthome/aiomygas/actions/workflows/ci.yml)
 
 Asynchronous Python API for [Мой Газ](https://мойгаз.смородина.онлайн/).
 
@@ -84,6 +84,6 @@ pytest tests/ -v
 ## Links
 
 - [PyPI](https://pypi.org/project/aiomygas/)
-- [GitHub](https://github.com/lizardsystems/aiomygas)
-- [Changelog](https://github.com/lizardsystems/aiomygas/blob/main/CHANGELOG.md)
-- [Bug Tracker](https://github.com/lizardsystems/aiomygas/issues)
+- [GitHub](https://github.com/ru-smarthome/aiomygas)
+- [Changelog](https://github.com/ru-smarthome/aiomygas/blob/main/CHANGELOG.md)
+- [Bug Tracker](https://github.com/ru-smarthome/aiomygas/issues)
